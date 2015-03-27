@@ -9,14 +9,19 @@
     <script>
       MP.api.ready(function() {
         var endpoint = 'segmentation/multiseg';
+        var event = 'App Open';
         var params = {
-          'type':'general',
-          'inner':'properties'
+          'type': 'general',
+          'inner': 'properties["$city"]',
+          'outer': 'properties["Campaign Source"]',
+          'event': event,
+          'to': moment(),
+          'from': moment().subtract(10, 'days')
         }
         var query = MP.api.query(endpoint, params);
         
         $.when(query).done(function(obj){
-          
+          console.log(query.values());
           
         });
         
