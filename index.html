@@ -21,8 +21,14 @@
         var query = MP.api.query(endpoint, params);
         
         $.when(query).done(function(obj){
-          console.log(obj);
-          
+            console.log(obj);
+            var series = obj.data.series;
+            var data = obj.data.values;
+            
+            _.each(_.keys(data), function(key){
+                console.log(data[key]);
+            }
+            
         });
         
       });
