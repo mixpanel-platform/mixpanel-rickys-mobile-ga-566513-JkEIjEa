@@ -8,9 +8,14 @@
   <body class="mixpanel-platform-body">
     <script>
       MP.api.ready(function() {
-        var 
-        var query = MP.api.query;
-        var joinProp;
+        var endpoint = 'segmentation/multiseg';
+        var params = {
+          'type':'general',
+          'inner':'properties'
+        }
+        var query = MP.api.query(endpoint, params);
+        
+        $
         
         
         
